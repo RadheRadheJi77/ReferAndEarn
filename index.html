@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR CUBAN Referral</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #ff9800;
+            color: white;
+        }
+        .container {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 90%;
+            max-width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #ff5722;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e64a19;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: black;
+        }
+    </style>
+    <script>
+        function generateReferral() {
+            let name = document.getElementById("name").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            
+            if (name === "" || phone === "") {
+                alert("Please enter your name and phone number.");
+                return;
+            }
+
+            // Referral message
+            let referralMessage = `*LalGanj* to *Lucknow* \n\nonly in *1800* 🥳🚖 \n\nVehical 5seater Car🚖🚖\n\n*Mr* *Cuban* *Car* *Rental*\nCheck now 👇👇👇\nhttps://wa.me/917522020838?text=mai%2C%20apke%20Offer%20ke%20bare%20me%20janna%20Chahta%20hu%20refferd%20by%20${name}%20ji%20(${phone})\n\nYou can earn *50r* on sharing with your friends \nhttps://radheradheji77.github.io/Mrcuban-Car-Rental/ 💸💸`;
+            
+            // Encode message
+            let encodedMessage = encodeURIComponent(referralMessage);
+
+            // WhatsApp share link
+            let whatsappShareLink = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+
+            // Redirect to WhatsApp
+            window.location.href = whatsappShareLink;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/MrCubanCarRental/Mrcuban-Car-Rental/main/logoo.jpeg" alt="MR CUBAN Logo" class="logo">
+        <h2>Refer & Earn with MR CUBAN</h2>
+        <p>Enter your details to generate a referral link</p>
+        <input type="text" id="name" placeholder="Enter Your Name" required><br>
+        <input type="text" id="phone" placeholder="Enter Your Phone Number" required><br>
+        <button onclick="generateReferral()">Generate Referral Link</button>
+        <div class="contact-info">
+            <p><strong>Contact Us:</strong></p>
+            <p>📞 Phone: +91 7522020838</p>
+            <p>📧 Email: mrcuban777@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>
+
